@@ -10,12 +10,12 @@ pipeline {
 		}
 		stage('Docker Build'){
 			steps{
-				sh 'docker images -a'
+				sh '/Applications/Docker.app/Contents/Resources/bin/docker images -a'
 				sh '''
 					cd azure-vote/
-					docker images -a
-					docker build -t jenkins-pipeline .
-					docker images -a
+					/Applications/Docker.app/Contents/Resources/bin/docker images -a
+					/Applications/Docker.app/Contents/Resources/bin/docker build -t jenkins-pipeline .
+					/Applications/Docker.app/Contents/Resources/bin/docker images -a
 					cd ..
 					'''
 			}
